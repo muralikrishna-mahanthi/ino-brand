@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | INO brand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .journal-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #fff;
+            padding-top: 80px;
+        }
+        .journal-hero h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 80px;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+        }
+        .journal-grid {
+            padding: 100px 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 80px;
+        }
+        .journal-post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .journal-post img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            filter: grayscale(1);
+            transition: filter 1s ease;
+        }
+        .journal-post:hover img {
+            filter: grayscale(0);
+        }
+        .journal-post span {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            opacity: 0.4;
+        }
+        .journal-post h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 24px;
+            letter-spacing: -1px;
+        }
+        .journal-post p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.6;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__left">
+            <button id="MenuToggle" class="menu-btn" onclick="toggleMenu()">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">INO</h1>
+            </a>
+        </div>
+        <div class="header__right">
+            <button class="icon-btn" onclick="openSearch()">SEARCH</button>
+            <button class="icon-btn" onclick="openCart()">SHOPPING BAG (0)</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="journal-hero reveal-slow">
+            <h1>JOURNAL</h1>
+        </div>
+
+        <section class="journal-grid">
+            <div class="journal-post reveal-item">
+                <span>01 / 2026</span>
+                <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Atelier Visit">
+                <h2>THE ART OF TAILORING</h2>
+                <p>Exploring the architectural foundations of our upcoming Black Series collection through the lens of early modernist design.</p>
+            </div>
+            <div class="journal-post reveal-item" style="transition-delay: 0.3s;">
+                <span>02 / 2026</span>
+                <img src="https://images.pexels.com/photos/1205033/pexels-photo-1205033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Design Note">
+                <h2>CULTURAL ARCHIVE</h2>
+                <p>A deep dive into the materials that define the Grey Series, from virgin wools to architectural felt textures.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-grid__col">
+                <p class="footer-tagline">ARCHITECTURAL SILHOUETTES<br>FOR THE MODERN SOUL.</p>
+            </div>
+            <nav class="footer-grid__col">
+                <div class="link-group">
+                    <h4>SERIES</h4>
+                    <a href="index.html#black-series-section">BLACK</a>
+                    <a href="index.html#grey-series-section">GREY</a>
+                    <a href="index.html#olive-series-section">OLIVE</a>
+                </div>
+                <div class="link-group">
+                    <h4>CULTURE</h4>
+                    <a href="journal.html">JOURNAL</a>
+                    <a href="atelier.html">ATELIER</a>
+                    <a href="stores.html">STORES</a>
+                </div>
+            </nav>
+        </div>
+        <div class="footer-signature">
+            <h1 class="footer-logo-massive">INO</h1>
+        </div>
+    </footer>
+
+    <!-- SHARED OVERLAYS (REQUIRED FOR NAV/SEARCH/CART TO WORK) -->
+    <div id="SearchModal" class="overlay search-overlay">
+        <button class="close-btn" onclick="closeSearch()">✕</button>
+        <div class="search-content">
+            <input type="text" placeholder="SEARCH FOR AN ITEM" class="search-input" oninput="performSearch(this.value)">
+            <div id="SearchResults" class="search-results-list"></div>
+        </div>
+    </div>
+
+    <div id="CartDrawer" class="overlay cart-overlay">
+        <div class="drawer">
+            <div class="drawer__header">
+                <h3>SHOPPING BAG</h3>
+                <button class="close-btn" onclick="closeCart()">✕</button>
+            </div>
+            <div class="drawer__body" id="CartContent"></div>
+            <div class="drawer__footer">
+                <div class="total">TOTAL: <span id="CartTotal">0.00 USD</span></div>
+                <button class="btn btn--black">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="SideMenu" class="overlay menu-overlay">
+        <button id="MenuCloseDynamic" class="menu-btn menu-close-fixed active" onclick="toggleMenu()">
+            <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+        </button>
+        <div class="menu-panels">
+            <div class="menu-panel menu-panel--left">
+                <div class="panel-content reveal-slow">
+                    <div class="brand-manifesto">
+                        <span class="manifesto-tag">SINCE 2026</span>
+                        <h3 class="manifesto-title">REDEFINING<br>MINIMALISM</h3>
+                        <p class="manifesto-text">
+                            WE BELIEVE IN THE POWER OF ARCHITECTURAL SILHOUETTES AND THE EMOTION OF FINE TEXTURES. 
+                            TAILORING FOR THE INDIVIDUAL, INSPIRED BY THE GLOBAL ATELIER.
+                        </p>
+                        <div class="manifesto-signature">INO BRAND &copy;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-panel menu-panel--right">
+                <div class="panel-content reveal-slow">
+                    <nav class="main-nav-fest">
+                        <ul>
+                            <li><a href="index.html#black-series-section" onclick="toggleMenu()">The Black Series</a></li>
+                            <li><a href="index.html#grey-series-section" onclick="toggleMenu()">The Grey Series</a></li>
+                            <li><a href="index.html#olive-series-section" onclick="toggleMenu()">The Olive Series</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

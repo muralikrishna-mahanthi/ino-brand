@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores | INO brand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .stores-hero {
+            padding: 150px 40px;
+            text-align: center;
+        }
+        .stores-hero h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 80px;
+            letter-spacing: -4px;
+        }
+        .stores-list {
+            padding: 100px 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+        .store-item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .store-item h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.1em;
+        }
+        .store-item p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__left">
+            <button id="MenuToggle" class="menu-btn" onclick="toggleMenu()">
+                <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+            </button>
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">INO</h1>
+            </a>
+        </div>
+        <div class="header__right">
+            <button class="icon-btn" onclick="openSearch()">SEARCH</button>
+            <button class="icon-btn" onclick="openCart()">SHOPPING BAG (0)</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="stores-hero">
+            <h1>STORES</h1>
+        </section>
+
+        <section class="stores-list">
+            <div class="store-item">
+                <h3>INO ATELIER PARIS</h3>
+                <p>24 RUE DU MONTMARTRE,<br>75001 PARIS, FR<br>+33 1 42 33 00 00</p>
+            </div>
+            <div class="store-item" style="transition-delay: 0.2s;">
+                <h3>INO TOKYO FLUX</h3>
+                <p>5-1-1 MINAMI-AOYAMA,<br>MINATO-KU, TOKYO, JP<br>+81 3 5464 0000</p>
+            </div>
+            <div class="store-item" style="transition-delay: 0.4s;">
+                <h3>INO ARCHIVE NYC</h3>
+                <p>12 HUDSON STREET,<br>NEW YORK, NY 10013, US<br>+1 212 941 0000</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-grid__col">
+                <p class="footer-tagline">ARCHITECTURAL SILHOUETTES<br>FOR THE MODERN SOUL.</p>
+            </div>
+            <nav class="footer-grid__col">
+                <div class="link-group">
+                    <h4>SERIES</h4>
+                    <a href="index.html#black-series-section">BLACK</a>
+                    <a href="index.html#grey-series-section">GREY</a>
+                    <a href="index.html#olive-series-section">OLIVE</a>
+                </div>
+                <div class="link-group">
+                    <h4>CULTURE</h4>
+                    <a href="journal.html">JOURNAL</a>
+                    <a href="atelier.html">ATELIER</a>
+                    <a href="stores.html">STORES</a>
+                </div>
+            </nav>
+        </div>
+        <div class="footer-signature">
+            <h1 class="footer-logo-massive">INO</h1>
+        </div>
+    </footer>
+
+    <!-- SHARED OVERLAYS -->
+    <div id="SearchModal" class="overlay search-overlay">
+        <button class="close-btn" onclick="closeSearch()">✕</button>
+        <div class="search-content">
+            <input type="text" placeholder="SEARCH FOR AN ITEM" class="search-input" oninput="performSearch(this.value)">
+            <div id="SearchResults" class="search-results-list"></div>
+        </div>
+    </div>
+
+    <div id="CartDrawer" class="overlay cart-overlay">
+        <div class="drawer">
+            <div class="drawer__header">
+                <h3>SHOPPING BAG</h3>
+                <button class="close-btn" onclick="closeCart()">✕</button>
+            </div>
+            <div class="drawer__body" id="CartContent"></div>
+            <div class="drawer__footer">
+                <div class="total">TOTAL: <span id="CartTotal">0.00 USD</span></div>
+                <button class="btn btn--black">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="SideMenu" class="overlay menu-overlay">
+        <button id="MenuCloseDynamic" class="menu-btn menu-close-fixed active" onclick="toggleMenu()">
+            <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+        </button>
+        <div class="menu-panels">
+            <div class="menu-panel menu-panel--left">
+                <div class="panel-content reveal-slow">
+                    <div class="brand-manifesto">
+                        <span class="manifesto-tag">SINCE 2026</span>
+                        <h3 class="manifesto-title">REDEFINING<br>MINIMALISM</h3>
+                        <p class="manifesto-text">WE BELIEVE IN THE POWER OF ARCHITECTURAL SILHOUETTES AND THE EMOTION OF FINE TEXTURES. TAILORING FOR THE INDIVIDUAL, INSPIRED BY THE GLOBAL ATELIER.</p>
+                        <div class="manifesto-signature">INO BRAND &copy;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-panel menu-panel--right">
+                <div class="panel-content reveal-slow">
+                    <nav class="main-nav-fest">
+                        <ul>
+                            <li><a href="index.html#black-series-section" onclick="toggleMenu()">The Black Series</a></li>
+                            <li><a href="index.html#grey-series-section" onclick="toggleMenu()">The Grey Series</a></li>
+                            <li><a href="index.html#olive-series-section" onclick="toggleMenu()">The Olive Series</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

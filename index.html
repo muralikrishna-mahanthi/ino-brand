@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INO brand | Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__left">
+            <button id="MenuToggle" class="menu-btn" onclick="toggleMenu()">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">INO</h1>
+            </a>
+        </div>
+        <div class="header__center">
+        </div>
+        <div class="header__right">
+            <button class="icon-btn search-trigger" onclick="openSearch()">SEARCH</button>
+            <button class="icon-btn" onclick="openCart()">SHOPPING BAG (0)</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="black-series-section" class="black-series-intro">
+            <!-- Hero Part -->
+            <div class="black-series-intro__hero">
+                <video autoplay muted loop playsinline class="black-series-intro__hero-video">
+                    <source src="videos/Black series intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="black-series-intro__hero-content">
+                    <h2 class="black-series-intro__hero-title">THE BLACK SERIES</h2>
+                    <a href="#black-campaign" class="btn btn--white">VIEW ALL</a>
+                </div>
+            </div>
+
+            <!-- Campaign Part -->
+            <div id="black-campaign" class="black-series-intro__campaign">
+                <div class="black-series-intro__grid">
+                    <div class="black-series-intro__item reveal-item"
+                        onclick="openQuickView('STRUCTURED WOOL BLAZER', '129.00 USD', 'img/pro 1.png', 'Essential tailoring crafted from premium wool. Featuring a structured silhouette with modern proportions.', 'Dry clean only. Main: 100% Wool. Lining: 100% Viscose.', 'rgba(0,0,0,0.95)', '#ffffff')">
+                        <div class="black-series-intro__item-image">
+                            <img src="img/pro 1.png" alt="Structured Wool Blazer">
+                        </div>
+                        <div class="black-series-intro__item-info">
+                            <h3>STRUCTURED WOOL BLAZER</h3>
+                            <p>ESSENTIAL TAILORING</p>
+                        </div>
+                    </div>
+                    <div class="black-series-intro__item reveal-item" style="transition-delay: 0.2s;"
+                        onclick="openQuickView('OVERSIZED FELT COAT', '259.00 USD', 'img/pro 2.png', 'Atmospheric volume creates a cinematic silhouette. Heavy-weight felt for ultimate structure and warmth.', 'Dry clean only. Main: 80% Wool, 20% Nylon.', 'rgba(0,0,0,0.95)', '#ffffff')">
+                        <div class="black-series-intro__item-image">
+                            <img src="img/pro 2.png" alt="Oversized Felt Coat">
+                        </div>
+                        <div class="black-series-intro__item-info">
+                            <h3>OVERSIZED FELT COAT</h3>
+                            <p>ATMOSPHERIC VOLUME</p>
+                        </div>
+                    </div>
+                    <div class="black-series-intro__item reveal-item" style="transition-delay: 0.4s;"
+                        onclick="openQuickView('CRINKLED LEATHER TRENCH', '399.00 USD', 'img/pro 3.png', 'A modern archive piece featuring hand-treated crinkled leather. Double-breasted dengan oversized lapels.', 'Leather specialist clean only. 100% genuine Lambskin.', 'rgba(0,0,0,0.95)', '#ffffff')">
+                        <div class="black-series-intro__item-image">
+                            <img src="img/pro 3.png" alt="Crinkled Leather Trench">
+                        </div>
+                        <div class="black-series-intro__item-info">
+                            <h3>CRINKLED LEATHER TRENCH</h3>
+                            <p>MODERN ARCHIVE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grey-series-section" class="grey-ino-collection">
+            <!-- Grey INO Hero Part -->
+            <div class="grey-ino-hero">
+                <video autoplay muted loop playsinline class="grey-ino-hero__video">
+                    <source src="videos/Grey ion intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="grey-ino-hero__content">
+                    <span class="grey-ino-hero__subtitle">LIMITED COLLECTION</span>
+                    <h2 class="grey-ino-hero__title">GREY INO</h2>
+                    <a href="#grey-campaign" class="btn btn--white">EXPLORE</a>
+                </div>
+            </div>
+
+            <!-- Grey INO Product Part -->
+            <div id="grey-campaign" class="grey-ino-products">
+                <!-- Grey INO Product Carousel -->
+                <div class="grey-ino-carousel reveal-item">
+                    <div class="grey-ino-carousel__wrapper">
+                        <div class="grey-ino-carousel__container" id="GreyCarousel">
+                            <!-- Slide 1 -->
+                            <div class="grey-ino-carousel__slide"
+                                onclick="openQuickView('MINIMALIST GREY JACKET', '229.00 USD', 'img/grey_ino_product_img_1.png', 'Signature piece from the Grey INO collection.', '100% Virgin Wool.', '#D3D3D3', '#000000')">
+                                <img src="img/grey_ino_product_img_1.png" alt="Grey Jacket View 1">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="grey-ino-carousel__slide"
+                                onclick="openQuickView('MINIMALIST GREY JACKET', '229.00 USD', 'img/grey_ino_product_img_2.png', 'Detailed stitching and premium wool feel.', '100% Virgin Wool.', '#D3D3D3', '#000000')">
+                                <img src="img/grey_ino_product_img_2.png" alt="Grey Jacket View 2">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="grey-ino-carousel__slide"
+                                onclick="openQuickView('MINIMALIST GREY JACKET', '229.00 USD', 'img/grey_ino_product_img_3.png', 'Modern proportions and architectural silhouette.', '100% Virgin Wool.', '#D3D3D3', '#000000')">
+                                <img src="img/grey_ino_product_img_3.png" alt="Grey Jacket View 3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-nav carousel-nav--prev" onclick="moveCarousel(-1)">&larr;</button>
+                    <button class="carousel-nav carousel-nav--next" onclick="moveCarousel(1)">&rarr;</button>
+
+                    <!-- Indicators -->
+                    <div class="carousel-indicators" id="CarouselDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="grey-ino-item__info">
+                        <h3>MINIMALIST GREY JACKET</h3>
+                        <span>229.00 USD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="olive-series-section" class="olive-series-intro">
+            <!-- Olive Series Hero Part -->
+            <div class="olive-series-intro__hero">
+                <video autoplay muted loop playsinline class="olive-series-intro__hero-video">
+                    <source src="videos/olive green intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="olive-series-intro__hero-content">
+                    <span class="olive-series-intro__hero-subtitle">NEW COLLECTION</span>
+                    <h2 class="olive-series-intro__hero-title">THE OLIVE SERIES</h2>
+                    <a href="#olive-campaign" class="btn btn--white">EXPLORE</a>
+                </div>
+            </div>
+
+            <!-- Olive Series Campaign Part -->
+            <div id="olive-campaign" class="olive-series-intro__campaign">
+                <div class="olive-series-carousel reveal-item">
+                    <div class="olive-series-carousel__container" id="OliveCarousel">
+                        <div class="olive-series-item"
+                            onclick="openQuickView('OLIVE STRUCTURED BLAZER', '149.00 USD', 'img/olive brown product img 1.png', 'Signature tailoring from the Olive series.', '100% Cotton.', '#8B7347', '#ffffff')">
+                            <div class="olive-series-item__image">
+                                <img src="img/olive brown product img 1.png" alt="Olive Jacket View 1">
+                            </div>
+                        </div>
+                        <div class="olive-series-item"
+                            onclick="openQuickView('OLIVE STRUCTURED BLAZER', '149.00 USD', 'img/olive brown product img 2.png', 'Side detailing and fabric texture.', '100% Cotton.', '#8B7347', '#ffffff')">
+                            <div class="olive-series-item__image">
+                                <img src="img/olive brown product img 2.png" alt="Olive Jacket View 2">
+                            </div>
+                        </div>
+                        <div class="olive-series-item"
+                            onclick="openQuickView('OLIVE STRUCTURED BLAZER', '149.00 USD', 'img/olive brown product img 3.png', 'Modern silhouette and urban finish.', '100% Cotton.', '#8B7347', '#ffffff')">
+                            <div class="olive-series-item__image">
+                                <img src="img/olive brown product img 3.png" alt="Olive Jacket View 3">
+                            </div>
+                        </div>
+                        <div class="olive-series-item"
+                            onclick="openQuickView('OLIVE STRUCTURED BLAZER', '149.00 USD', 'img/olive brown product img 4.png', 'Back profile and minimalist proportions.', '100% Cotton.', '#8B7347', '#ffffff')">
+                            <div class="olive-series-item__image">
+                                <img src="img/olive brown product img 4.png" alt="Olive Jacket View 4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="olive-carousel-nav">
+                        <button class="olive-nav-btn prev" onclick="scrollOlive(-1)">&larr;</button>
+                        <button class="olive-nav-btn next" onclick="scrollOlive(1)">&rarr;</button>
+                    </div>
+
+                    <!-- Unified Product Label -->
+                    <div class="olive-series-item__info-static">
+                        <h3>OLIVE STRUCTURED BLAZER</h3>
+                        <span>149.00 USD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- CINEMATIC FOOTER -->
+    <footer class="site-footer">
+        <!-- Part 2: Premium Split Grid -->
+        <div class="footer-grid">
+            <div class="footer-grid__col footer-grid__col--info">
+                <p class="footer-tagline">ARCHITECTURAL SILHOUETTES<br>FOR THE MODERN SOUL.</p>
+                <div class="newsletter-simple">
+                    <input type="email" placeholder="JOIN THE LIST" class="newsletter-input">
+                    <button class="newsletter-submit">&rarr;</button>
+                </div>
+            </div>
+
+            <nav class="footer-grid__col footer-grid__col--links">
+                <div class="link-group">
+                    <h4>SERIES</h4>
+                    <a href="#">BLACK</a>
+                    <a href="#">GREY</a>
+                    <a href="#">OLIVE</a>
+                </div>
+                <div class="link-group">
+                    <h4>CULTURE</h4>
+                    <a href="journal.html">JOURNAL</a>
+                    <a href="atelier.html">ATELIER</a>
+                    <a href="stores.html">STORES</a>
+                </div>
+                <div class="link-group">
+                    <h4>SUPPORT</h4>
+                    <a href="shipping.html">SHIPPING</a>
+                    <a href="returns.html">RETURNS</a>
+                    <a href="legal.html">LEGAL</a>
+                </div>
+            </nav>
+
+            <div class="footer-grid__col footer-grid__col--social">
+                <div class="social-links">
+                    <a href="#" class="social-tag">INSTAGRAM</a>
+                    <a href="#" class="social-tag">TIKTOK</a>
+                    <a href="#" class="social-tag">PINTEREST</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2026 INO BRAND INC. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+
+        <!-- Part 3: The Grand Signature -->
+        <div class="footer-signature">
+            <h1 class="footer-logo-massive">INO</h1>
+        </div>
+    </footer>
+
+    <!-- Overlays -->
+    <div id="SearchModal" class="overlay search-overlay">
+        <button class="close-btn" onclick="closeSearch()">✕</button>
+        <div class="search-content">
+            <input type="text" placeholder="SEARCH FOR AN ITEM" class="search-input"
+                oninput="performSearch(this.value)">
+            <div id="SearchResults" class="search-results-list">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="CartDrawer" class="overlay cart-overlay">
+        <div class="drawer">
+            <div class="drawer__header">
+                <h3>SHOPPING BAG</h3>
+                <button class="close-btn" onclick="closeCart()">✕</button>
+            </div>
+            <div class="drawer__body" id="CartContent">
+                <p class="empty-msg">Your shopping bag is empty.</p>
+            </div>
+            <div class="drawer__footer">
+                <div class="total">TOTAL: <span id="CartTotal">0.00 USD</span></div>
+                <button class="btn btn--black">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="SideMenu" class="overlay menu-overlay">
+        <button id="MenuCloseDynamic" class="menu-btn menu-close-fixed active" onclick="toggleMenu()">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+        <div class="menu-panels">
+            <div class="menu-panel menu-panel--left">
+                <div class="panel-content reveal-slow">
+                    <div class="brand-manifesto">
+                        <span class="manifesto-tag">SINCE 2026</span>
+                        <h3 class="manifesto-title">REDEFINING<br>MINIMALISM</h3>
+                        <p class="manifesto-text">
+                            WE BELIEVE IN THE POWER OF ARCHITECTURAL SILHOUETTES AND THE EMOTION OF FINE TEXTURES.
+                            TAILORING FOR THE INDIVIDUAL, INSPIRED BY THE GLOBAL ATELIER.
+                        </p>
+                        <nav class="manifesto-nav">
+                            <a href="journal.html">JOURNAL</a>
+                            <a href="atelier.html">ATELIER</a>
+                            <a href="stores.html">STORES</a>
+                        </nav>
+                        <div class="manifesto-signature">INO BRAND &copy;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-panel menu-panel--right">
+                <div class="panel-content reveal-slow">
+                    <nav class="main-nav-fest">
+                        <ul>
+                            <li style="--i:1"><a href="#black-series-section" onclick="toggleMenu()">The Black
+                                    Series</a></li>
+                            <li style="--i:2"><a href="#grey-series-section" onclick="toggleMenu()">The Grey Series</a>
+                            </li>
+                            <li style="--i:3"><a href="#olive-series-section" onclick="toggleMenu()">The Olive
+                                    Series</a></li>
+                        </ul>
+                    </nav>
+                    <div class="panel-bottom-grid">
+                        <div class="footer-column">
+                            <a href="#">ABOUT</a>
+                            <a href="#">EXPERIENCE ZONES</a>
+                            <a href="#">PREVIOUS EDITIONS</a>
+                        </div>
+                        <div class="footer-column">
+                            <a href="#">PARTNERS</a>
+                            <a href="#">PRIVACY POLICY</a>
+                            <a href="#">TERMS & CONDITIONS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="QuickView" class="overlay quickview-overlay">
+        <div class="quickview">
+            <button class="close-btn" onclick="closeQuickView()">✕</button>
+            <div class="quickview__container">
+                <div class="quickview__image">
+                    <img id="qv-image" src="" alt="Product Image">
+                </div>
+                <div class="quickview__details">
+                    <div class="reveal-slow">
+                        <h2 id="qv-title" class="quickview__title"></h2>
+                        <p id="qv-price" class="quickview__price"></p>
+                        <div class="quickview__description">
+                            <h4>DESCRIPTION</h4>
+                            <p id="qv-description"></p>
+                        </div>
+                        <div class="quickview__info">
+                            <h4>ADDITIONAL INFORMATION</h4>
+                            <p id="qv-additional"></p>
+                        </div>
+                        <div class="quickview__actions">
+                            <button class="btn btn--black" id="qv-add-btn">ADD TO BAG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
